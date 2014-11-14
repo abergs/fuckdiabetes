@@ -7,21 +7,46 @@
     font-style: normal;
 }
 
-@-webkit-keyframes scaler {
+.scalersteps() {
     0% {
+        -moz-transform: scale(1.0);
+        -ms-transform: scale(1.0);
+        -o-transform: scale(1.0);
+        -webkit-transform: scale(1.0);
         transform: scale(1.0);
     }
 
     50% {
+        -moz-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        -o-transform: scale(0.9);
+        -webkit-transform: scale(0.9);
         transform: scale(0.9);
     }
 
     100% {
+        -moz-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        -webkit-transform: scale(1.1);
         transform: scale(1.1);
     }
 }
 
-@-webkit-keyframes fader {
+@-moz-keyframes scaler {
+    .scalersteps();
+}
+
+@-ms-keyframes scaler {
+    .scalersteps();
+}
+
+@keyframes scaler {
+    .scalersteps();
+}
+
+
+.faderSteps() {
     0% {
         opacity: 1;
     }
@@ -31,7 +56,25 @@
     }
 }
 
+@-moz-keyframes fader {
+    .faderSteps();
+}
+
+@-ms-keyframes fader {
+    .faderSteps();
+}
+
+@-webkit-keyframes fader {
+    .faderSteps();
+}
+
+@keyframes fader {
+    .faderSteps();
+}
+
 * {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -142,16 +185,33 @@ header {
 
 .animation() {
     -webkit-animation-name: scaler;
+    -moz-animation-name: scaler;
+    -o-animation-name: scaler;
+    animation-name: scaler;
     -webkit-animation-duration: 8s;
+    -moz-animation-duration: 8s;
+    -o-animation-duration: 8s;
+    animation-duration: 8s;
     -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -o-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
     -webkit-animation-direction: alternate;
+    -moz-animation-direction: alternate;
+    -o-animation-direction: alternate;
+    animation-direction: alternate;
 }
 
 .delay(@seconds) {
     -webkit-animation-delay: @seconds;
+    -moz-animation-delay: @seconds;
+    -o-animation-delay: @seconds;
+    animation-delay: @seconds;
 }
 
 .person {
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
     border-radius: 100px;
     border: 4px solid white;
     position: relative;
@@ -245,6 +305,8 @@ header {
     background: black;
     display: inline-block;
     /* float: left; */
+    -moz-border-radius: 200px;
+    -webkit-border-radius: 200px;
     border-radius: 200px;
     position: relative;
 }
@@ -284,29 +346,32 @@ header {
 
 .reflink {
     text-align: center;
-    font-family: 'League Gothic';    
-    margin-bottom:  100px;
-    font-size:30px;
+    font-family: 'League Gothic';
+    margin-bottom: 100px;
+    font-size: 30px;
 }
+
 .reflink a:visited, .reflink a {
- color:#00A8FF; 
+    color: #00A8FF;
 }
 
 .builtby {
-    font-family: 'League Gothic';    
+    font-family: 'League Gothic';
 }
 
 .builtby a, .builtby a:visited {
-    color:#00A8FF;
+    color: #00A8FF;
 }
 
 .noastyle {
-  text-decoration:  none;
+    text-decoration: none;
 }
-.delayChild(@child, @seconds){
-    @ch : @child;
-    @sec : @seconds;
-    :nth-child(@ch) {
+
+.delayChild(@child, @seconds) {
+    @ch: @child;
+    @sec: @seconds;
+
+    :nth-child(@{ch}) {
         :nth-child(2) {
             .delay(@sec);
         }
@@ -331,20 +396,33 @@ header {
         -o-transition: opacity 1s ease-in-out;
         transition: opacity 1s ease-in-out;
         opacity: 1;
+        -moz-border-radius: 100px;
+        -webkit-border-radius: 100px;
         border-radius: 100px;
-        
-      &:nth-child(2) {
+
+        &:nth-child(2) {
             -webkit-animation-name: fader;
-        -webkit-animation-duration: 5s;
-        -webkit-animation-iteration-count: infinite;
-        -webkit-animation-direction: alternate;
+            -moz-animation-name: fader;
+            -o-animation-name: fader;
+            animation-name: fader;
+            -webkit-animation-duration: 5s;
+            -moz-animation-duration: 5s;
+            -o-animation-duration: 5s;
+            animation-duration: 5s;
+            -webkit-animation-iteration-count: infinite;
+            -moz-animation-iteration-count: infinite;
+            -o-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+            -webkit-animation-direction: alternate;
+            -moz-animation-direction: alternate;
+            -o-animation-direction: alternate;
+            animation-direction: alternate;
         }
     }
 }
+
 .endFaces {
-    
     margin: 50px 0;
-    
     .delayChild(1,4s);
     .delayChild(2,1s);
     .delayChild(3,0s);

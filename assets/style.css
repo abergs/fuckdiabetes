@@ -1,4 +1,4 @@
-/* Regular */
+﻿/* Regular */
 @font-face {
   font-family: 'League Gothic';
   src: url('leaguegothic-regular-webfont.eot');
@@ -6,15 +6,89 @@
   font-weight: normal;
   font-style: normal;
 }
-@-webkit-keyframes scaler {
+@-moz-keyframes scaler {
   0% {
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    -webkit-transform: scale(1);
     transform: scale(1);
   }
   50% {
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -o-transform: scale(0.9);
+    -webkit-transform: scale(0.9);
     transform: scale(0.9);
   }
   100% {
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
     transform: scale(1.1);
+  }
+}
+@-ms-keyframes scaler {
+  0% {
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -o-transform: scale(0.9);
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  100% {
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+@keyframes scaler {
+  0% {
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -o-transform: scale(0.9);
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  100% {
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+@-moz-keyframes fader {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-ms-keyframes fader {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 @-webkit-keyframes fader {
@@ -25,7 +99,17 @@
     opacity: 0;
   }
 }
+@keyframes fader {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 * {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 html,
@@ -110,22 +194,50 @@ header {
   margin-right: auto;
 }
 .faces img {
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
   border-radius: 100px;
   border: 4px solid white;
   position: relative;
   -webkit-animation-name: scaler;
+  -moz-animation-name: scaler;
+  -o-animation-name: scaler;
+  animation-name: scaler;
   -webkit-animation-duration: 8s;
+  -moz-animation-duration: 8s;
+  -o-animation-duration: 8s;
+  animation-duration: 8s;
   -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
   -webkit-animation-direction: alternate;
+  -moz-animation-direction: alternate;
+  -o-animation-direction: alternate;
+  animation-direction: alternate;
 }
 .person {
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
   border-radius: 100px;
   border: 4px solid white;
   position: relative;
   -webkit-animation-name: scaler;
+  -moz-animation-name: scaler;
+  -o-animation-name: scaler;
+  animation-name: scaler;
   -webkit-animation-duration: 8s;
+  -moz-animation-duration: 8s;
+  -o-animation-duration: 8s;
+  animation-duration: 8s;
   -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
   -webkit-animation-direction: alternate;
+  -moz-animation-direction: alternate;
+  -o-animation-direction: alternate;
+  animation-direction: alternate;
 }
 .missingFaces {
   position: absolute;
@@ -138,45 +250,80 @@ header {
   bottom: -100px;
 }
 .missingFaces img {
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
   border-radius: 100px;
   border: 4px solid white;
   position: relative;
   -webkit-animation-name: scaler;
+  -moz-animation-name: scaler;
+  -o-animation-name: scaler;
+  animation-name: scaler;
   -webkit-animation-duration: 8s;
+  -moz-animation-duration: 8s;
+  -o-animation-duration: 8s;
+  animation-duration: 8s;
   -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
   -webkit-animation-direction: alternate;
+  -moz-animation-direction: alternate;
+  -o-animation-direction: alternate;
+  animation-direction: alternate;
 }
 .missingFaces img:nth-child(4) {
   top: -100px;
   right: -100px;
   -webkit-animation-delay: 3s;
+  -moz-animation-delay: 3s;
+  -o-animation-delay: 3s;
+  animation-delay: 3s;
 }
 .missingFaces img:nth-child(3) {
   top: -50px;
   right: -100px;
   -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  -o-animation-delay: 1s;
+  animation-delay: 1s;
 }
 .missingFaces img:nth-child(2) {
   right: -100px;
   -webkit-animation-delay: 5s;
+  -moz-animation-delay: 5s;
+  -o-animation-delay: 5s;
+  animation-delay: 5s;
 }
 .missingFaces img:nth-child(1) {
   right: -100px;
 }
 .faces img:nth-child(2) {
   -webkit-animation-delay: 3s;
+  -moz-animation-delay: 3s;
+  -o-animation-delay: 3s;
+  animation-delay: 3s;
   top: 80px;
 }
 .faces img:nth-child(3) {
   -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  -o-animation-delay: 1s;
+  animation-delay: 1s;
   top: -20px;
 }
 .faces img:nth-child(4) {
   -webkit-animation-delay: 4s;
+  -moz-animation-delay: 4s;
+  -o-animation-delay: 4s;
+  animation-delay: 4s;
   top: 60px;
 }
 .faces img:nth-child(5) {
   -webkit-animation-delay: 5s;
+  -moz-animation-delay: 5s;
+  -o-animation-delay: 5s;
+  animation-delay: 5s;
   top: 160px;
 }
 @media (max-width: 600px) {
@@ -206,7 +353,8 @@ header {
   background: black;
   display: inline-block;
   /* float: left; */
-
+  -moz-border-radius: 200px;
+  -webkit-border-radius: 200px;
   border-radius: 200px;
   position: relative;
 }
@@ -228,34 +376,35 @@ header {
 }
 .callToAction {
   margin-top: 100px;
-  margin-bottom: 20px;
+  margin-bottom: 100px;
   padding: 20px;
   border: 5px solid white;
   color: #f33300;
   text-decoration: none;
 }
-.reflink {
-    text-align: center;
-    font-family: 'League Gothic';    
-    margin-bottom:  100px;
-    font-size:30px;
+.noastyle {
+  text-decoration: none;
 }
-.reflink a:visited, .reflink a {
- color:#00A8FF; 
+.reflink {
+  text-align: center;
+  font-family: 'League Gothic';
+  margin-bottom: 100px;
+  font-size: 30px;
+}
+.reflink a:visited,
+.reflink a {
+  color: #00A8FF;
+}
+.builtby {
+  font-family: 'League Gothic';
+}
+.builtby a,
+.builtby a:visited {
+  color: #00A8FF;
 }
 .noastyle {
-  text-decoration:  none;
+  text-decoration: none;
 }
-
-
-.builtby {
-    font-family: 'League Gothic';    
-}
-
-.builtby a, .builtby a:visited {
-    color:#00A8FF;
-}
-
 .fadeImg {
   margin: 0 auto;
   position: relative;
@@ -273,26 +422,52 @@ header {
   -o-transition: opacity 1s ease-in-out;
   transition: opacity 1s ease-in-out;
   opacity: 1;
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
   border-radius: 100px;
 }
 .fadeImg img:nth-child(2) {
   -webkit-animation-name: fader;
+  -moz-animation-name: fader;
+  -o-animation-name: fader;
+  animation-name: fader;
   -webkit-animation-duration: 5s;
+  -moz-animation-duration: 5s;
+  -o-animation-duration: 5s;
+  animation-duration: 5s;
   -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
   -webkit-animation-direction: alternate;
+  -moz-animation-direction: alternate;
+  -o-animation-direction: alternate;
+  animation-direction: alternate;
 }
 .endFaces {
   margin: 50px 0;
 }
-.endFaces :nth-child(1) :nth-child(2) {
+.endFaces :nth-child( 1) :nth-child(2) {
   -webkit-animation-delay: 4s;
+  -moz-animation-delay: 4s;
+  -o-animation-delay: 4s;
+  animation-delay: 4s;
 }
-.endFaces :nth-child(2) :nth-child(2) {
+.endFaces :nth-child( 2) :nth-child(2) {
   -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  -o-animation-delay: 1s;
+  animation-delay: 1s;
 }
-.endFaces :nth-child(3) :nth-child(2) {
+.endFaces :nth-child( 3) :nth-child(2) {
   -webkit-animation-delay: 0s;
+  -moz-animation-delay: 0s;
+  -o-animation-delay: 0s;
+  animation-delay: 0s;
 }
-.endFaces :nth-child(4) :nth-child(2) {
+.endFaces :nth-child( 4) :nth-child(2) {
   -webkit-animation-delay: 2s;
+  -moz-animation-delay: 2s;
+  -o-animation-delay: 2s;
+  animation-delay: 2s;
 }
