@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link type="text/css" rel="stylesheet" href="assets/style.css">
+    </head>
+
+    <body>
+
+        <header>
+        </header>
+        <section>
+            <img class="logo" src="assets/fuckdiabetes.svg" />
+        </section>
+
+        <section class="curve powefulText">
+            <section class="alwaysSick ">
+                <div class="inlineBlock">
+                    <div>
+                        <span class="strokedText">en sjukdom</span>
+                        <span class="stroke"></span>
+                    </div>
+                    <div>man <span class="highlight">aldrig</span> blir av med</div>
+                </div>
+            </section>
+            <img class="curveImg" src="assets/curve2.svg" />
+        </section>
+
+        <section class="section oneOfTen powefulText">
+            <section class="">
+                <div class="inlineBlock">
+                    <div>
+                        <span class="strokedText">visste du</span>
+                        <span class="stroke"></span>
+                    </div>
+                    <div>att <span class="highlight">en</span> av <span class="highlight">nio</span> svenskar har diabetes</div>
+                    <div>eller är i <span class="highlight">riskzonen</span>?</div>
+                </div>
+            </section>
+        </section>
+
+        <section class="section everyDay relative powefulText">
+            <div class="faces">
+                <div class="relative">
+                    <img src="assets/faces/1.jpg" />
+                    <img src="assets/faces/2.jpg" />
+                    <img src="assets/faces/3.jpg" />
+                    <img src="assets/faces/4.jpg" />
+                    <img src="assets/faces/5.jpg" />
+                    <!--<img src="assets/faces/6.jpg" />-->
+                </div>
+            </div>
+            <section class="">
+                <div class="inlineBlock">
+                    <div>
+                      varje dag
+                    </div>
+                    <div><span class="highlight">dör fem</span> svenskar</div>
+                    <div>i direkt följd av sin diabetes</div>
+                </div>
+                <div class="everyDayCircle">
+                    <img src="assets/missyou.png" />
+                </div>
+            </section>
+            <div class="missingFaces">
+                <div class="relative">
+                    <img src="assets/faces/alex.png" />
+                    <img src="assets/faces/erik.png" />
+                    <img src="assets/faces/sara.png" />
+                    <img src="assets/faces/vera.png" />
+                </div>
+            </div>
+        </section>
+
+        <section class="section moreThanTraffic powefulText">
+            <section class="">
+                <div class="inlineBlock">
+                    <div>
+                      det är <span class="highlight">fem gånger fler</span>
+                    </div>
+                    <div>än i trafiken</div>
+                </div>
+            </section>
+        </section>
+
+        <section class="section support powefulText">
+            <section class="">
+                <div class="inlineBlock">
+                    <div>
+                      stöd forskning som kan stoppa diabetes
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section style="text-align: center">
+            <img class="logo" src="assets/fuckdiabetes.svg" />
+            <div class="inlineBlock">
+                <div class="callToAction powefulText">Donera 100kr till diabetsfonden nu</div>
+                <img src="assets/tack.png" />
+                <div class="endFaces">
+                    <div class="fadeImg">
+                        <img src="assets/faces/2.jpg" />
+                        <img src="assets/faces/sara.png" />
+                    </div>
+                    <div class="fadeImg">
+                        <img src="assets/faces/1.jpg" />
+                        <img src="assets/faces/alex.png" />
+                    </div>
+
+                    <div class="fadeImg">
+                        <img src="assets/faces/3.jpg" />
+                        <img src="assets/faces/vera.png" />
+                    </div>
+                    <div class="fadeImg">
+                        <img src="assets/faces/5.jpg" />
+                        <img src="assets/faces/erik.png" />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script>
+            var scrolldelay;
+            var isScrolling = false;
+            function pageScroll() {
+                isScrolling = true;
+                window.scrollBy(0, 1);
+                scrolldelay = setTimeout('pageScroll()', 10);
+            }
+
+            //pageScroll();
+
+            var lastScroll = 0;
+            window.onscroll = function (event) {
+                var scrollTop = document.body.scrollTop;
+                if (scrollTop > lastScroll && !isScrolling) {
+                    pageScroll();
+                } else if (scrollTop < lastScroll) {
+                    clearTimeout(scrolldelay);
+                    isScrolling = false;
+                }
+                lastScroll = scrollTop;
+            }
+		</script>
+    </body>
+
+</html>
