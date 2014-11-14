@@ -247,6 +247,15 @@ header {
   text-decoration:  none;
 }
 
+
+.builtby {
+    font-family: 'League Gothic';    
+}
+
+.builtby a, .builtby a:visited {
+    color:#00A8FF;
+}
+
 .fadeImg {
   margin: 0 auto;
   position: relative;
