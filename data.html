@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link type="text/css" rel="stylesheet" href="assets/style.css">
+        <link type="text/css" rel="stylesheet" href="assets/chartist.min.css">
+        <script src="assets/chartist.js"></script>
+        <script src="assets/ct-threshold.js"></script>
+        <script src="assets/ct-pointlabel.js"></script>
+        <style>
+        .circles div {
+        	display: 	inline-block;
+        	width:60px;
+        	border-radius:60px;
+        	height:60px;
+        	background: white;
+        }
+
+        .circles div:nth-child(1) {
+        	transform:scale(0.4);
+        }
+        .circles div:nth-child(2) {
+        	transform:scale(0.5);
+        }
+        .circles div:nth-child(3) {
+        	transform:scale(0.7);
+        }
+        .circles div:nth-child(4) {
+        	transform:scale(0.8);
+        }
+
+        .circles div:nth-child(6) {
+        	transform:scale(0.8);
+        }
+        .circles div:nth-child(7) {
+        	transform:scale(0.7);
+        }
+        .circles div:nth-child(8) {
+        	transform:scale(0.5);
+        }
+        .circles div:nth-child(9) {
+        	transform:scale(0.4);
+        }
+
+        .curveImg {
+        	margin-top:0.5em;
+        }
+        .bs-chart .powerfulText {
+        	fill:#f33300;
+        	font-size:30px;
+        }
+        	@-webkit-keyframes dashoffset {
+  0% {
+    stroke-dashoffset: 0px;
+  }
+  100% {
+    stroke-dashoffset: -20px;
+  }
+}
+@-moz-keyframes dashoffset {
+  0% {
+    stroke-dashoffset: 0px;
+  }
+  100% {
+    stroke-dashoffset: -20px;
+  }
+}
+@-ms-keyframes dashoffset {
+  0% {
+    stroke-dashoffset: 0px;
+  }
+  100% {
+    stroke-dashoffset: -20px;
+  }
+}
+@keyframes dashoffset {
+  0% {
+    stroke-dashoffset: 0px;
+  }
+  100% {
+    stroke-dashoffset: -20px;
+  }
+}
+        .ct-line {
+        	stroke-dasharray: 5px;
+  			-webkit-animation: dashoffset 1s linear infinite;
+        }
+        </style>
+    </head>
+
+    <body>
+        <header>
+        </header>
+        <section>
+            <img class="logo" src="assets/fuckdiabetes.svg" />
+        </section>
+
+        <section class="curve powefulText">
+            <section class="alwaysSick ">
+                <div class="inlineBlock">
+                    <div>
+                        <span class="strokedText">a disease</span>
+                        <span class="stroke"></span>
+                    </div>
+                    <div>you'll <span class="highlight">never</span> get rid of</div>
+                </div>
+            </section>
+            <div class="bs-chart curveImg"></div>
+        </section>
+
+        <section class="section oneOfTen powefulText">
+            <section class="">
+                <div class="inlineBlock">
+                    <div>
+                        <span class="strokedText">did you know</span>
+                        <span class="stroke"></span>
+                    </div>
+                    <div>that <span class="highlight">one</span> out of <span class="highlight">nine</span> swedes have diabetes</div>
+                    <div>or is in the <span class="highlight">risk zone</span>?</div>
+                </div>
+                <div class="circles">
+                    <div></div>
+                	<div></div>
+                    <div></div>
+                    <div></div>
+                    <div style="background: #f33300"></div>
+                    <div></div>
+                	<div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </section>
+        </section>
+
+        <section class="section everyDay relative powefulText">
+           <!--  <div class="faces">
+                <div class="relative">
+                    <img src="assets/faces/1.jpg" />
+                    <img src="assets/faces/2.jpg" />
+                    <img src="assets/faces/3.jpg" />
+                    <img src="assets/faces/4.jpg" />
+                    <img src="assets/faces/5.jpg" />
+                    <img src="assets/faces/6.jpg" />
+                </div>
+            </div> -->
+            <section class="">
+                <div class="inlineBlock">
+                    <div>
+                      every day
+                    </div>
+                    <div><span class="highlight">five swedes</span> die </div>
+                    <div>in direct cause</div>
+                    <div>of their diabetes</div>
+                </div>
+                <div class="ct-pie-chart" style="display:inline-block"></div>
+                <!-- <div class="everyDayCircle">
+                    
+                    <img src="assets/missyou.png" />
+                </div> -->
+            </section>
+            <!-- <div class="missingFaces">
+                <div class="relative">
+                    <img src="assets/faces/alex.png" />
+                    <img src="assets/faces/erik.png" />
+                    <img src="assets/faces/sara.png" />
+                    <img src="assets/faces/vera.png" />
+                </div>
+            </div> -->
+        </section>
+
+        <section class="section moreThanTraffic powefulText">
+            <section class="">
+                <div class="inlineBlock">
+                    
+                	
+                    <div style="display:inline-block">
+                    <div>
+                      that is <span class="highlight">5x more</span>
+                    </div>
+                    <div>than in trafic</div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section class="section support powefulText">
+            <section class="">
+                <div class="inlineBlock">
+                    <div>
+                      stöd forskning som kan stoppa diabetes
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section style="text-align: center">
+            <img class="logo" src="assets/fuckdiabetes.svg" />
+            <div class="inlineBlock">
+                <a href="http://www.diabetesgavan.se/single-donation" class="noastyle"><div class="callToAction powefulText">Donera 100kr till diabetesfonden nu</div></a>
+                <div class="reflink"><a href="http://www.diabetesgavan.se/">via diabetesgåvan.se</a></div>
+
+                <img src="assets/tack.png" />
+                <div class="endFaces">
+                    <div class="fadeImg">
+                        <img src="assets/faces/2.jpg" />
+                        <img src="assets/faces/sara.png" />
+                    </div>
+                    <div class="fadeImg">
+                        <img src="assets/faces/1.jpg" />
+                        <img src="assets/faces/alex.png" />
+                    </div>
+
+                    <div class="fadeImg">
+                        <img src="assets/faces/3.jpg" />
+                        <img src="assets/faces/vera.png" />
+                    </div>
+                    <div class="fadeImg">
+                        <img src="assets/faces/5.jpg" />
+                        <img src="assets/faces/erik.png" />
+                    </div>
+                </div>
+                <span class="builtby"><a href="http://andersaberg.com">Byggd med &#9829; av Anders</a></span>
+            </div>
+        </section>
+        <script>
+            var scrolldelay;
+            var isScrolling = false;
+            /*function pageScroll() {
+                isScrolling = true;
+                window.scrollBy(0, 1);
+                scrolldelay = setTimeout('pageScroll()', 10);
+            }*/
+
+            //pageScroll();
+
+            var lastScroll = 0;
+            window.onscroll = function (event) {
+                var scrollTop = document.body.scrollTop;
+                if (scrollTop > lastScroll && !isScrolling) {
+                    pageScroll();
+                } else if (scrollTop < lastScroll) {
+                    clearTimeout(scrolldelay);
+                    isScrolling = false;
+                }
+                lastScroll = scrollTop;
+            }
+
+	            var data = {
+				  labels: ['Diabetes', 'Trafic'],
+				  series: [5,1]
+				};
+
+				var options = {
+				  labelInterpolationFnc: function(value) {
+				    return value[0]
+				  },
+				  height:'500px',
+				  width:'300px'
+				};
+
+				var responsiveOptions = [
+				  ['screen and (min-width: 640px)', {
+				    chartPadding: 30,
+				    labelOffset: 100,
+				    labelDirection: 'explode',
+				    labelInterpolationFnc: function(value) {
+				      return value;
+				    }
+				  }],
+				  ['screen and (min-width: 1024px)', {
+				    labelOffset: 80,
+				    chartPadding: 20
+				  }]
+				];
+
+				new Chartist.Pie('.ct-pie-chart', data, options, responsiveOptions);
+
+
+            new Chartist.Line('.bs-chart', {
+                  labels: ['','13.2', '2.1', '17.9',''],
+                  series: [
+                    [4, 13.2, 2.1, 17.9, 6]
+                  ]
+                },
+                {
+                  showArea: false,
+                  axisY: {
+                    showLabel:false,
+                    showGrid: false,
+                    onlyInteger: false
+                  },
+                  axisX: {
+                    showGrid: false,
+                    showLabel: false
+                  },
+                  width:'100%',
+                  height:'400px',
+                  fullWidth:true,
+                  chartPadding: {
+                  	left:-50,
+                  	right:-50
+                  },
+
+                  plugins: [
+                    Chartist.plugins.ctThreshold({
+                      threshold: 4
+                    }),
+                    Chartist.plugins.ctPointLabels({
+                      textAnchor: 'middle',
+                      labelClass: 'powerfulText',
+                    })
+                  ]
+                });
+        </script>
+    </body>
+
+</html>
