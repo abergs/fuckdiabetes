@@ -183,7 +183,7 @@
             <section class="">
                 <div class="inlineBlock">
                     <div>
-                      every day
+                      that every day
                     </div>
                     <div><span class="highlight">five swedes</span> die </div>
                     <div>in direct cause</div>
@@ -212,7 +212,7 @@
                 	
                     <div style="display:inline-block">
                     <div>
-                      that is <span class="highlight">5x more</span>
+                      that is <span class="highlight" style="font-size:2em">5x more</span>
                     </div>
                     <div>than in trafic</div>
                     </div>
@@ -224,7 +224,7 @@
             <section class="">
                 <div class="inlineBlock">
                     <div>
-                      stöd forskning som kan stoppa diabetes
+                      support reserach that can <span class="highlight">stop</span> diabetes
                     </div>
                 </div>
             </section>
@@ -232,10 +232,10 @@
         <section style="text-align: center">
             <img class="logo" src="assets/fuckdiabetes.svg" />
             <div class="inlineBlock">
-                <a href="http://www.diabetesgavan.se/single-donation" class="noastyle"><div class="callToAction powefulText">Donera 100kr till diabetesfonden nu</div></a>
+                <a href="http://www.diabetesgavan.se/single-donation" class="noastyle"><div class="callToAction powefulText">Donate 100kr to diabetesfonden now</div></a>
                 <div class="reflink"><a href="http://www.diabetesgavan.se/">via diabetesgåvan.se</a></div>
 
-                <img src="assets/tack.png" />
+                <!-- <img src="assets/tack.png" />
                 <div class="endFaces">
                     <div class="fadeImg">
                         <img src="assets/faces/2.jpg" />
@@ -254,8 +254,8 @@
                         <img src="assets/faces/5.jpg" />
                         <img src="assets/faces/erik.png" />
                     </div>
-                </div>
-                <span class="builtby"><a href="http://andersaberg.com">Byggd med &#9829; av Anders</a></span>
+                </div> -->
+                <span class="builtby"><a href="http://andersaberg.com">Built with &#9829; by Anders</a></span>
             </div>
         </section>
         <script>
@@ -291,7 +291,11 @@
 				    return value[0]
 				  },
 				  height:'500px',
-				  width:'300px'
+				  width:'500px',
+                  chartPadding: {
+                    top:0,
+                    bottom:0
+                  }
 				};
 
 				var responsiveOptions = [
