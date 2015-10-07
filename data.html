@@ -16,6 +16,38 @@
         	background: white;
         }
 
+        .ct-area.ct-threshold-within {
+            fill: green !important;
+            fill-opacity: .2;
+        }
+        .ct-area.ct-threshold-above {
+            fill: #f33300 !important;
+        }
+        .ct-area.ct-threshold-below {
+            fill: #f33300 !important;
+        }
+
+        .ct-point.ct-threshold-within {
+            stroke:green;
+        }
+
+
+        .ct-line.ct-threshold-within {
+        	stroke: green !important;
+            
+        }
+        .ct-line..ct-threshold-above {
+        	stroke: #f33300 !important;           
+        }
+
+        .ct-line {
+            stroke-width: 4px;
+            //stroke-linecap: round;
+        }
+        .ct-line..ct-threshold-below {
+        	stroke: #f33300 !important;
+        }
+
         .circles div:nth-child(1) {
         	transform:scale(0.4);
         }
@@ -46,10 +78,15 @@
         	margin-top:0.5em;
         }
         .bs-chart .powerfulText {
-        	fill:#f33300;
+        	fill:#333;
         	font-size:30px;
         }
+
+        .bs-chart svg{
+            margin-bottom: -22px;
+        }
         	@-webkit-keyframes dashoffset {
+        }
   0% {
     stroke-dashoffset: 0px;
   }
@@ -83,7 +120,7 @@
 }
         .ct-line {
         	stroke-dasharray: 5px;
-  			-webkit-animation: dashoffset 1s linear infinite;
+  			-webkit-animation: dashoffset 0.6s linear infinite;
         }
         </style>
     </head>
@@ -276,13 +313,13 @@
 
 
             new Chartist.Line('.bs-chart', {
-                  labels: ['','13.2', '2.1', '17.9',''],
+                  labels: ['','11.2','13.2','6.5', '2.1','6.3', '17.9',''],
                   series: [
-                    [4, 13.2, 2.1, 17.9, 6]
+                    [4, 11.2, 13.2, 6.5, 2.1, 6.3,17.9, 6]
                   ]
                 },
                 {
-                  showArea: false,
+                  showArea: true,
                   axisY: {
                     showLabel:false,
                     showGrid: false,
@@ -297,12 +334,14 @@
                   fullWidth:true,
                   chartPadding: {
                   	left:-50,
-                  	right:-50
+                  	right:-50,
+                    bottom:-50
                   },
 
                   plugins: [
                     Chartist.plugins.ctThreshold({
-                      threshold: 4
+                      upperThreshold: 8,
+                      lowerThreshold: 4.5,
                     }),
                     Chartist.plugins.ctPointLabels({
                       textAnchor: 'middle',

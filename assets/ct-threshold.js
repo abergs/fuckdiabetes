@@ -24,13 +24,17 @@
 
     var defaultOptions = {
       threshold: 0,
+      upperThreshold: 0,
+      lowerThreshold: 0,
       classNames: {
         aboveThreshold: 'ct-threshold-above',
-        belowThreshold: 'ct-threshold-below'
+        belowThreshold: 'ct-threshold-below',
+        withinThreshold: 'ct-threshold-within'
       },
       maskNames: {
         aboveThreshold: 'ct-threshold-mask-above',
-        belowThreshold: 'ct-threshold-mask-below'
+        belowThreshold: 'ct-threshold-mask-below',
+        withinThreshold: 'ct-threshold-mask-within'
       }
     };
 
@@ -38,10 +42,13 @@
       // Select the defs element within the chart or create a new one
       var defs = data.svg.querySelector('defs') || data.svg.elem('defs');
       // Project the threshold value on the chart Y axis
-      var projectedThreshold = data.chartRect.height() - data.axisY.projectValue(options.threshold) + data.chartRect.y2;
+      var projectedUpperThreshold = data.chartRect.height() - data.axisY.projectValue(options.upperThreshold) + data.chartRect.y2;
+      var projectedLowerThreshold = data.chartRect.height() - data.axisY.projectValue(options.lowerThreshold) + data.chartRect.y2;
       var width = data.svg.width();
       var height = data.svg.height();
 
+      console.log("upper", projectedUpperThreshold, "lower", projectedLowerThreshold);
+      console.log("upper mask rect", projectedUpperThreshold, "lower mask rect", height - projectedLowerThreshold);
       // Create mask for upper part above threshold
       defs
         .elem('mask', {
@@ -55,7 +62,7 @@
           x: 0,
           y: 0,
           width: width,
-          height: projectedThreshold,
+          height: projectedUpperThreshold,
           fill: 'white'
         });
 
@@ -70,9 +77,26 @@
         })
         .elem('rect', {
           x: 0,
-          y: projectedThreshold,
+          y: projectedLowerThreshold,
           width: width,
-          height: height - projectedThreshold,
+          height: height - projectedLowerThreshold,
+          fill: 'white'
+        });
+
+        // Create mask for within part below threshold
+      defs
+        .elem('mask', {
+          x: 0,
+          y: 0,
+          width: width,
+          height: height,
+          id: options.maskNames.withinThreshold
+        })
+        .elem('rect', {
+          x: 0,
+          y: projectedUpperThreshold,
+          width: width,
+          height: (projectedLowerThreshold - projectedUpperThreshold),
           fill: 'white'
         });
 
@@ -90,9 +114,17 @@
             if (data.type === 'point') {
               // For points we can just use the data value and compare against the threshold in order to determine
               // the appropriate class
-              data.element.addClass(
-                data.value.y >= options.threshold ? options.classNames.aboveThreshold : options.classNames.belowThreshold
-              );
+              if(data.value.y >= options.upperThreshold) {
+                data.element.addClass(options.classNames.aboveThreshold)
+              } else if (data.value.y <= options.lowerThreshold) {
+                data.element.addClass(options.classNames.belowThreshold)
+              } else {
+                data.element.addClass(options.classNames.withinThreshold)
+              }
+
+              // data.element.addClass(
+              //   data.value.y >= options.threshold ? options.classNames.aboveThreshold : options.classNames.belowThreshold
+              // );
             } else if (data.type === 'line' || data.type === 'bar' || data.type === 'area') {
               // Cloning the original line path, mask it with the upper mask rect above the threshold and add the
               // class for above threshold
@@ -104,13 +136,22 @@
                 })
                 .addClass(options.classNames.aboveThreshold);
 
-              // Use the original line path, mask it with the lower mask rect below the threshold and add the class
-              // for blow threshold
               data.element
+                .parent()
+                .elem(data.element._node.cloneNode(true))
                 .attr({
                   mask: 'url(#' + options.maskNames.belowThreshold + ')'
                 })
                 .addClass(options.classNames.belowThreshold);
+
+
+              // Use the original line path, mask it with the lower mask rect below the threshold and add the class
+              // for blow threshold
+              data.element
+                .attr({
+                  mask: 'url(#' + options.maskNames.withinThreshold + ')'
+                })
+                .addClass(options.classNames.withinThreshold);
             }
           });
 
